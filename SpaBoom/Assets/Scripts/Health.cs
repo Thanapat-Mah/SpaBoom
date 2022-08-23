@@ -7,6 +7,10 @@ public class Health : MonoBehaviour
 {
     public Image[] hearts;
     public int remainingHealth = 3;
+
+    void Start()
+    {
+    }
     
     void Update()
     {
@@ -19,5 +23,10 @@ public class Health : MonoBehaviour
                 hearts[i].color = Color.white;
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        remainingHealth--;
     }
 }

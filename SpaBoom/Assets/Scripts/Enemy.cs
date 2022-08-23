@@ -15,6 +15,5 @@ public class Enemy : MonoBehaviour
     void ShootBullet()
     {
         Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
-        Debug.Log("Spawn bullet");
     }
 }
