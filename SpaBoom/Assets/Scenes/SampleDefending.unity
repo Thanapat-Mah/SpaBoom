@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede0c814be5011d41b296cb6ef9a0702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 1
+  attackRate: 0.2
   bulletPrefab: {fileID: 5632545476586690161, guid: 6bd4021c9b7b88643b68c79e03cedd80, type: 3}
 --- !u!1 &1513421248
 GameObject:
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 1513421253}
   m_Layer: 0
   m_Name: Earth
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

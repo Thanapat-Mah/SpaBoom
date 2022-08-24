@@ -5,10 +5,12 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 direction;
+    public Vector3 target;
     public float speed;
+
     void Update()
     {
-        this.transform.position += this.direction * this.speed * Time.deltaTime;
+        this.transform.position = Vector3.MoveTowards(this.transform.position, target, this.speed * Time.deltaTime);
     }
 
      private void OnCollisionEnter2D(Collision2D collision)
