@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossRotator : MonoBehaviour
 {
-    //Movement speed
+    //Changed angle
     public float angle;
     //Time in second before randomly change direction
     public float changeTime;
