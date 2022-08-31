@@ -6,14 +6,19 @@ public class Enemy : MonoBehaviour
 {
     public float attackRate = 1;
     public Projectile bulletPrefab;
-    // Start is called before the first frame update
+    public LevelController levelController;
+
     void Start()
     {
         InvokeRepeating(nameof(ShootBullet), this.attackRate, this.attackRate);
     }
 
-    void ShootBullet()
+    private void ShootBullet()
     {
-        Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
+        // if the game is not run, don't shoot bullet
+        if (levelController.GetIsGameRun())
+        {
+            Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
+        }
     }
 }

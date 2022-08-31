@@ -41,25 +41,34 @@ public class LevelController : MonoBehaviour
         {
             return;
         }
-        if (_remainingTime <= 0 &&
+        // when time out in defend phase of wave 3, game over
+        if (_remainingTime <= 0.3 &&
             _isDefendPhase &&
             _wave == 3)
         {
             StartCoroutine(GameOver());
         }
-        else if (_remainingTime <= 0)
+        // if timeout, switch phase
+        else if (_remainingTime <= 0.3)
         {
-            StartCoroutine(TimeOut());
+            StartCoroutine(SwitchPhase());
         }
+        // else, continuous decrease time
         else
         {
             _remainingTime -= Time.deltaTime;
         }
+        // display remaining time and current wave
         remainingTimeText.text = ((int)_remainingTime).ToString();
         wave.text = _wave.ToString();
     }
 
-    static IEnumerator TimeOut()
+    public bool GetIsGameRun()
+    {
+        return _isGameRun;
+    }
+
+    static IEnumerator SwitchPhase()
     {
         _isGameRun = false;
         yield return new WaitForSeconds(1);
