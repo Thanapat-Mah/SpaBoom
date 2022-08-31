@@ -10,6 +10,8 @@ public class LevelController : MonoBehaviour
     public TextMeshProUGUI remainingTimeText;
     public TextMeshProUGUI wave;
     public BossRotator bossRotator;
+    public Shield shield;
+    public Gun gun;
 
     private static bool _isGameRun;
     private static float _remainingTime;
@@ -34,6 +36,7 @@ public class LevelController : MonoBehaviour
         _remainingTime = 10f;
         _isDefendPhase = true;
         _wave = 1;
+        SetObject();
     }
 
     private void Update()
@@ -83,12 +86,6 @@ public class LevelController : MonoBehaviour
             _wave++;                        // increase wave if previous phase is attack phase
         }
         _isDefendPhase = !_isDefendPhase;   // switch phase
-
-        if (_wave == 3)
-        {
-            bossRotator.SetActive();        // set boss to active when it's a final wave (wave 3)
-        }
-
         if (_isDefendPhase)
         {
             _remainingTime = 10f;           // 30 secs for defend phase
@@ -97,6 +94,7 @@ public class LevelController : MonoBehaviour
         {
             _remainingTime = 5f;           // 15 secs for attack phase
         }
+        SetObject();
         _isGameRun = true;
     }
 
@@ -106,5 +104,24 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(2);
         _isGameRun = true;
+    }
+
+    private void SetObject()
+    {
+        if (_wave == 3)
+        {
+            bossRotator.SetActive(true);        // set boss to active when it's a final wave (wave 3)
+        }
+
+        if (_isDefendPhase)
+        {
+            shield.SetActive(true);
+            gun.SetActive(false);
+        }
+        else
+        {
+            shield.SetActive(false);
+            gun.SetActive(true);
+        }
     }
 }

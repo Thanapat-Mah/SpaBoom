@@ -6,20 +6,6 @@ public class Shield : MonoBehaviour
 { 
     public ScoreManager scoreManager;
     public Health health;
-    void Start()
-    {
-    }
- 
-    void Update()
-    {
-        // calculate angle to rotate
-        Vector3 orbVector = Camera.main.WorldToScreenPoint(transform.position);
-        orbVector = Input.mousePosition - orbVector;
-        float angle = Mathf.Atan2(orbVector.y, orbVector.x) * Mathf.Rad2Deg;
- 
-        // rotate the object according to calculated angle
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,5 +21,10 @@ public class Shield : MonoBehaviour
                 scoreManager.AddScore(15);
             }
         }
+    }
+
+    public void SetActive(bool isActive)
+    {
+        this.gameObject.SetActive(isActive);
     }
 }

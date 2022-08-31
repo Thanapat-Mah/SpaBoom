@@ -32,8 +32,8 @@ public class BossRotator : MonoBehaviour
         }
     }
 
-    public void SetActive()
+    public void SetActive(bool isActive)
     {
-        this.gameObject.SetActive(true);
+        this.gameObject.SetActive(isActive);
     }
 }

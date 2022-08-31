@@ -759,6 +759,7 @@ GameObject:
   - component: {fileID: 713878295}
   - component: {fileID: 713878296}
   - component: {fileID: 713878291}
+  - component: {fileID: 713878297}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -839,7 +840,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713878290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
@@ -962,6 +963,18 @@ PolygonCollider2D:
       - {x: 5.16, y: -2.8899999}
       - {x: 5.24, y: -2.75}
       - {x: 5.38, y: -2.46}
+--- !u!114 &713878297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713878290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11508c4ca0723a44bbac15468c0e1aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &778229861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,7 +1331,7 @@ MonoBehaviour:
   speed: 100
   changeTime: 2
   percentChange: 50
-  levelController: {fileID: 0}
+  levelController: {fileID: 1878129396}
 --- !u!4 &1230057394
 Transform:
   m_ObjectHideFlags: 0
@@ -1569,7 +1582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRate: 1
   bulletPrefab: {fileID: 5632545476586690161, guid: 6bd4021c9b7b88643b68c79e03cedd80, type: 3}
-  levelController: {fileID: 0}
+  levelController: {fileID: 1878129396}
 --- !u!1 &1455689884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,3 +2296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remainingTimeText: {fileID: 637591519}
   wave: {fileID: 334056900}
+  bossRotator: {fileID: 1455689887}
+  shield: {fileID: 713878291}
+  gun: {fileID: 0}
