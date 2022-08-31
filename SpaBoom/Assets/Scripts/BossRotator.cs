@@ -12,10 +12,13 @@ public class BossRotator : MonoBehaviour
     public float percentChange;
     
     private float timer;
-    
-    void start(){
+
+    void Start(){
+        //enabled = false;
+        this.gameObject.SetActive(false);
         timer = 0;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -27,5 +30,10 @@ public class BossRotator : MonoBehaviour
             }
             timer = 0;
         }
+    }
+
+    public void SetActive()
+    {
+        this.gameObject.SetActive(true);
     }
 }

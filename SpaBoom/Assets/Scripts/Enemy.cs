@@ -15,8 +15,8 @@ public class Enemy : MonoBehaviour
 
     private void ShootBullet()
     {
-        // if the game is not run, don't shoot bullet
-        if (levelController.GetIsGameRun())
+        // shoot bullet only if game phase is defend
+        if (levelController.GetIsDefendPhase())
         {
             Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
         }

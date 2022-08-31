@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
     public static LevelController Instance;
     public TextMeshProUGUI remainingTimeText;
     public TextMeshProUGUI wave;
+    public BossRotator bossRotator;
 
     private static bool _isGameRun;
     private static float _remainingTime;
@@ -42,14 +43,14 @@ public class LevelController : MonoBehaviour
             return;
         }
         // when time out in defend phase of wave 3, game over
-        if (_remainingTime <= 0.3 &&
+        if (_remainingTime <= 1 &&
             _isDefendPhase &&
             _wave == 3)
         {
             StartCoroutine(GameOver());
         }
         // if timeout, switch phase
-        else if (_remainingTime <= 0.3)
+        else if (_remainingTime <= 1)
         {
             StartCoroutine(SwitchPhase());
         }
@@ -68,15 +69,26 @@ public class LevelController : MonoBehaviour
         return _isGameRun;
     }
 
-    static IEnumerator SwitchPhase()
+    public bool GetIsDefendPhase()
+    {
+        return _isDefendPhase;
+    }
+
+    IEnumerator SwitchPhase()
     {
         _isGameRun = false;
         yield return new WaitForSeconds(1);
         if (!_isDefendPhase)
         {
             _wave++;                        // increase wave if previous phase is attack phase
-        }        
+        }
         _isDefendPhase = !_isDefendPhase;   // switch phase
+
+        if (_wave == 3)
+        {
+            bossRotator.SetActive();        // set boss to active when it's a final wave (wave 3)
+        }
+
         if (_isDefendPhase)
         {
             _remainingTime = 10f;           // 30 secs for defend phase
@@ -88,7 +100,7 @@ public class LevelController : MonoBehaviour
         _isGameRun = true;
     }
 
-    static IEnumerator GameOver()
+    IEnumerator GameOver()
     {
         _isGameRun = false;
         yield return new WaitForSeconds(1);
