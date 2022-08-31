@@ -26,7 +26,14 @@ public class Shield : MonoBehaviour
         // add score only when the health not empty yet
         if (health.GetRemainingHealth() > 0)
         {
-            scoreManager.AddScore(10);
+            if (collision.gameObject.tag == "NormalBullet")
+            {
+                scoreManager.AddScore(10);
+            }
+            else if (collision.gameObject.tag == "BossBullet")
+            {
+                scoreManager.AddScore(15);
+            }
         }
     }
 }
