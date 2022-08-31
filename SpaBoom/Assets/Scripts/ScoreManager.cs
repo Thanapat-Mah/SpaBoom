@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public TextMeshProUGUI scoreText;
 
-    private int _score;
+    private static int _score;
     
     public void Awake()
     {
@@ -33,14 +33,14 @@ public class ScoreManager : MonoBehaviour
             _score = 0;
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + _score.ToString();
+            scoreText.text = _score.ToString();
         }
     }
         
     public void StartScore()
     {
         enabled = true;
-        _score = 100;
+        _score = 0;
     }
         
     public int GetScore()

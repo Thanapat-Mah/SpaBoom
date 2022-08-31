@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 { 
     public ScoreManager scoreManager;
+    public Health health;
     void Start()
     {
     }
@@ -22,6 +23,10 @@ public class Shield : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        scoreManager.AddScore(10);
+        // add score only when the health not empty yet
+        if (health.GetRemainingHealth() > 0)
+        {
+            scoreManager.AddScore(10);
+        }
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public Image[] hearts;
-    public int remainingHealth = 3;
+    private int _remainingHealth = 3;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         // display current ramaining health
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < remainingHealth)
+            if (i < _remainingHealth)
             {
                 hearts[i].color = Color.red;
             } else {
@@ -27,10 +27,15 @@ public class Health : MonoBehaviour
         }
     }
 
+    public int GetRemainingHealth()
+    {
+        return _remainingHealth;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        remainingHealth--;
-        if (remainingHealth <= 0)
+        _remainingHealth--;
+        if (_remainingHealth <= 0)
         {
             StartCoroutine(Dead());
         }
