@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 { 
+    public ScoreManager scoreManager;
     void Start()
     {
     }
@@ -17,5 +18,10 @@ public class Shield : MonoBehaviour
  
         // rotate the object according to calculated angle
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        scoreManager.AddScore(10);
     }
 }
