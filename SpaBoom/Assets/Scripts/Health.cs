@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
 
     IEnumerator Dead()
     {
-        Debug.Log("Player dead, moving to result...");
+        //Debug.Log("Player dead, moving to result...");
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(2);
     }
