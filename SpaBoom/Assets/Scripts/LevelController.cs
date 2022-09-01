@@ -77,6 +77,19 @@ public class LevelController : MonoBehaviour
         return _isDefendPhase;
     }
 
+    public bool AllowEneyShooting()
+    {
+        if (_isDefendPhase &&
+            _remainingTime > 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     IEnumerator SwitchPhase()
     {
         _isGameRun = false;

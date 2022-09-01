@@ -7,6 +7,7 @@ TagManager:
   - Planet
   - BossBullet
   - NormalBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

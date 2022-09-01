@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Vector3 direction;
     public Vector3 target;
     public float speed;
 

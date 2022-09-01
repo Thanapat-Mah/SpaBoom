@@ -15,8 +15,8 @@ public class Enemy : MonoBehaviour
 
     private void ShootBullet()
     {
-        // shoot bullet only if game phase is defend
-        if (levelController.GetIsDefendPhase())
+        // shoot bullet only if level controller allow
+        if (levelController.AllowEneyShooting())
         {
             Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
         }
