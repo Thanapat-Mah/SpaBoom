@@ -46,14 +46,14 @@ public class LevelController : MonoBehaviour
             return;
         }
         // when time out in defend phase of wave 3, game over
-        if (_remainingTime <= 1 &&
-            _isDefendPhase &&
+        if (_remainingTime <= 0 &&
+            !_isDefendPhase &&
             _wave == 3)
         {
             StartCoroutine(GameOver());
         }
         // if timeout, switch phase
-        else if (_remainingTime <= 1)
+        else if (_remainingTime <= 0)
         {
             StartCoroutine(SwitchPhase());
         }
