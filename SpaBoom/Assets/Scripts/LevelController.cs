@@ -90,6 +90,20 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    public bool AllowPlayerShoot()
+    {
+        if (!_isDefendPhase &&
+            _remainingTime > 1 &&
+            _isGameRun == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     IEnumerator SwitchPhase()
     {
         _isGameRun = false;
@@ -101,7 +115,7 @@ public class LevelController : MonoBehaviour
         _isDefendPhase = !_isDefendPhase;   // switch phase
         if (_isDefendPhase)
         {
-            _remainingTime = 10f;           // 30 secs for defend phase
+            _remainingTime = 5f;           // 30 secs for defend phase
         }
         else
         {
