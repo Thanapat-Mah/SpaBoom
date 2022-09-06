@@ -18,8 +18,10 @@ public class ScoreUI : MonoBehaviour
     public void InstantiateScore()
     {
         var playerScores = LeaderBoardManager.Instance.GetHighScore().ToArray();
-        for (int i = 0; i < playerScores.Length && i < 5; i++)
+        
+        for (int i = 0; i < playerScores.Length && i < 10; i++)
         {
+            Debug.Log(playerScores[i].name);
             var row = Instantiate(rowUI, transform).GetComponent<RowUI>();
             if (i < 3)
                 Instantiate(medal[i], row.rank.transform);

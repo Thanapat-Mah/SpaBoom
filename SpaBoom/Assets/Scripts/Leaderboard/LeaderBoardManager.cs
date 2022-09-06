@@ -8,9 +8,11 @@ public class LeaderBoardManager : MonoBehaviour
 
     private static List<PlayerScore> PS;
     
+    // [SerializeField] private ScoreUI _scoreUI;
+    
     public void Awake()
     {
-        PS = new List<PlayerScore>();
+        PS ??= new List<PlayerScore>();
         
         if (Instance != null && Instance != this) 
         { 
@@ -19,6 +21,11 @@ public class LeaderBoardManager : MonoBehaviour
         else 
         { 
             Instance = this; 
+        }
+
+        for (int i = 0; i < PS.Count && i < 10; i++)
+        {
+            Debug.Log(PS[i].name);
         }
     }
 
@@ -32,5 +39,9 @@ public class LeaderBoardManager : MonoBehaviour
         PS.Add(playerScore);
     }
 
-    
+    // public void CreateLeaderboard()
+    // {
+    //     _scoreUI.ResetScoreUI();
+    //     _scoreUI.InstantiateScore();
+    // }
 }

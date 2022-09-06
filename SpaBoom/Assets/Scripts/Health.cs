@@ -45,6 +45,6 @@ public class Health : MonoBehaviour
     {
         //Debug.Log("Player dead, moving to result...");
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Result");
     }
 }
