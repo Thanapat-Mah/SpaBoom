@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Vector3 target;
     public float speed;
+    public GameObject bulletParticlePrefab;
 
     void Update()
     {
@@ -14,6 +15,7 @@ public class Projectile : MonoBehaviour
 
      private void OnCollisionEnter2D(Collision2D collision)
      {
+        Instantiate(bulletParticlePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
      }
 }

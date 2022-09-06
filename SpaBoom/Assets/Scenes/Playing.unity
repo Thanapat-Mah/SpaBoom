@@ -1902,6 +1902,7 @@ GameObject:
   - component: {fileID: 1513421252}
   - component: {fileID: 1513421251}
   - component: {fileID: 1513421253}
+  - component: {fileID: 1513421254}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Planet
@@ -2029,6 +2030,19 @@ MonoBehaviour:
   - {fileID: 925349749}
   - {fileID: 670707121}
   - {fileID: 465499398}
+--- !u!114 &1513421254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513421248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39fd195ac1941e4799ad9ab952f056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: e3ca4e9bf5763f9419ab3f69585eecde, type: 2}
 --- !u!1 &1609826062
 GameObject:
   m_ObjectHideFlags: 0
