@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 { 
-    public ScoreManager scoreManager;
     public Health health;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -14,11 +13,11 @@ public class Shield : MonoBehaviour
         {
             if (collision.gameObject.tag == "NormalBullet")
             {
-                scoreManager.AddScore(10);
+                ScoreManager.Instance.AddScore(10);
             }
             else if (collision.gameObject.tag == "BossBullet")
             {
-                scoreManager.AddScore(15);
+                ScoreManager.Instance.AddScore(15);
             }
         }
     }

@@ -1,13 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class SetScoreText : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI scoreText;
+    
+    private void Start()
+    {
+        scoreText = gameObject.GetComponent<TextMeshProUGUI>();
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if(scoreText != null)
