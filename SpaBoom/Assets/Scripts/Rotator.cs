@@ -10,7 +10,6 @@ public class Rotator : MonoBehaviour
     public float changeTime;
     //Percent to randomly change direction
     public float percentChange;
-    public LevelController levelController;
 
     private float timer;
     
@@ -20,7 +19,7 @@ public class Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!levelController.GetIsGameRun())
+        if (!LevelController.Instance.GetIsGameRun())
         {
             return;
         }

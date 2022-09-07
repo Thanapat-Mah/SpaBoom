@@ -77,7 +77,7 @@ public class LevelController : MonoBehaviour
         return _isDefendPhase;
     }
 
-    public bool AllowEneyShooting()
+    public bool AllowEnemyShooting()
     {
         if (_isDefendPhase &&
             _remainingTime > 1)

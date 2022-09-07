@@ -6,7 +6,6 @@ public class Gun : MonoBehaviour
 {
     public float attackRate = 1;
     public PlayerProjectile bulletPrefab;
-    public LevelController levelController;
     public GameObject spawnPoint;
     
     void Start()
@@ -15,7 +14,7 @@ public class Gun : MonoBehaviour
     }
     private void ShootBullet()
     {
-        if (levelController.AllowPlayerShoot())
+        if (LevelController.Instance.AllowPlayerShoot())
         {
             Instantiate(this.bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
         }

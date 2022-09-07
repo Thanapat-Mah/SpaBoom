@@ -5,9 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float attackRate = 1;
-    public ScoreManager scoreManager;
     public Projectile bulletPrefab;
-    public LevelController levelController;
     public int score;
 
     void Start()
@@ -18,7 +16,7 @@ public class Enemy : MonoBehaviour
     private void ShootBullet()
     {
         // shoot bullet only if level controller allow
-        if (levelController.AllowEneyShooting())
+        if (LevelController.Instance.AllowEnemyShooting())
         {
             Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
         }
@@ -27,7 +25,7 @@ public class Enemy : MonoBehaviour
      {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            scoreManager.AddScore(score);
+            ScoreManager.Instance.AddScore(score);
         }
      }
 }
