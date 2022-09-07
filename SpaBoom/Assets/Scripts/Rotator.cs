@@ -13,9 +13,11 @@ public class Rotator : MonoBehaviour
 
     private float timer;
     
-    void start(){
+    void Start()
+    {
         timer = 0;
     }
+    
     // Update is called once per frame
     void Update()
     {
