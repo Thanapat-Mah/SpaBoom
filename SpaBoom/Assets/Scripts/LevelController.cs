@@ -115,7 +115,7 @@ public class LevelController : MonoBehaviour
         _isDefendPhase = !_isDefendPhase;   // switch phase
         if (_isDefendPhase)
         {
-            _remainingTime = 5f;           // 30 secs for defend phase
+            _remainingTime = 10f;           // 30 secs for defend phase
         }
         else
         {
