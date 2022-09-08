@@ -15,7 +15,10 @@ public class Projectile : MonoBehaviour
 
      private void OnCollisionEnter2D(Collision2D collision)
      {
-        Instantiate(bulletParticlePrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Boss"))
+        {
+            Instantiate(bulletParticlePrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
      }
 }
