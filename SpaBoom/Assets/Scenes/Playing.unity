@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 713878295}
   - component: {fileID: 713878296}
   - component: {fileID: 713878291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f223447da7cb7644818b971b907a05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 1054016836}
   health: {fileID: 1513421253}
 --- !u!212 &713878292
 SpriteRenderer:
@@ -973,7 +972,7 @@ GameObject:
   - component: {fileID: 761714460}
   - component: {fileID: 761714459}
   - component: {fileID: 761714458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +993,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRate: 0.5
   bulletPrefab: {fileID: 6058657560474411029, guid: 81a2e0329a033ee4ca7b12a403562700, type: 3}
-  levelController: {fileID: 1878129396}
   spawnPoint: {fileID: 1008539180}
 --- !u!212 &761714459
 SpriteRenderer:
@@ -1353,7 +1351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980892456}
   - component: {fileID: 980892457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1398,7 +1396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008539181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1497,7 +1495,6 @@ MonoBehaviour:
   speed: 100
   changeTime: 2
   percentChange: 50
-  levelController: {fileID: 1878129396}
 --- !u!4 &1230057394
 Transform:
   m_ObjectHideFlags: 0
@@ -1661,7 +1658,8 @@ GameObject:
   - component: {fileID: 1373991429}
   - component: {fileID: 1373991431}
   - component: {fileID: 1373991432}
-  m_Layer: 0
+  - component: {fileID: 1373991433}
+  m_Layer: 6
   m_Name: UFO 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1748,9 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRate: 1
-  scoreManager: {fileID: 1054016836}
   bulletPrefab: {fileID: 5632545476586690161, guid: 6bd4021c9b7b88643b68c79e03cedd80, type: 3}
-  levelController: {fileID: 1878129396}
   score: 10
 --- !u!61 &1373991432
 BoxCollider2D:
@@ -1778,6 +1774,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.86, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1373991433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373991428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39fd195ac1941e4799ad9ab952f056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: e3ca4e9bf5763f9419ab3f69585eecde, type: 2}
 --- !u!1 &1455689884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1849,7 @@ GameObject:
   - component: {fileID: 1513421251}
   - component: {fileID: 1513421253}
   - component: {fileID: 1513421254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Earth
   m_TagString: Planet
   m_Icon: {fileID: 0}
@@ -2371,7 +2380,8 @@ GameObject:
   - component: {fileID: 1745239382}
   - component: {fileID: 1745239381}
   - component: {fileID: 1745239383}
-  m_Layer: 0
+  - component: {fileID: 1745239384}
+  m_Layer: 6
   m_Name: BOSSUFO
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -2406,9 +2416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRate: 1
-  scoreManager: {fileID: 1054016836}
   bulletPrefab: {fileID: 5632545476586690161, guid: 3cdedaf9674d48c43aeee42df4d22599, type: 3}
-  levelController: {fileID: 1878129396}
   score: 20
 --- !u!212 &1745239382
 SpriteRenderer:
@@ -2488,6 +2496,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.86, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1745239384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745239379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39fd195ac1941e4799ad9ab952f056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: e3ca4e9bf5763f9419ab3f69585eecde, type: 2}
 --- !u!1 &1878129394
 GameObject:
   m_ObjectHideFlags: 0
