@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float attackRate = 1;
+    public static float attackInterval = 0.5f;
     public PlayerProjectile bulletPrefab;
     public GameObject spawnPoint;
-    
+
     void Start()
     {
-        InvokeRepeating(nameof(ShootBullet), this.attackRate, this.attackRate);
+        InvokeRepeating(nameof(ShootBullet), attackInterval, attackInterval);
     }
+
     private void ShootBullet()
     {
         if (LevelController.Instance.AllowPlayerShoot())
@@ -19,8 +20,16 @@ public class Gun : MonoBehaviour
             Instantiate(this.bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
         }
     }
+
     public void SetActive(bool isActive)
     {
         this.gameObject.SetActive(isActive);
+    }
+
+    public void DecreatAttackInterval(float decreasePercent)
+    {
+        attackInterval = attackInterval * (1.0f - decreasePercent);
+        CancelInvoke();
+        InvokeRepeating(nameof(ShootBullet), attackInterval, attackInterval);
     }
 }

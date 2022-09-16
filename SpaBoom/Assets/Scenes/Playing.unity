@@ -991,7 +991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d17c2d72524ca49bb1b9cceb9da1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 0.5
   bulletPrefab: {fileID: 6058657560474411029, guid: 81a2e0329a033ee4ca7b12a403562700, type: 3}
   spawnPoint: {fileID: 1008539180}
 --- !u!212 &761714459
@@ -1473,6 +1472,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1159833029}
   - component: {fileID: 1159833028}
+  - component: {fileID: 1159833031}
+  - component: {fileID: 1159833030}
   m_Layer: 0
   m_Name: CometStar
   m_TagString: Untagged
@@ -1547,6 +1548,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1159833030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159833027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fca921156f0bd4298244c506b214ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1054016836}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!58 &1159833031
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159833027}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &1230057392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2668,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1924465625}
   - component: {fileID: 1924465624}
+  - component: {fileID: 1924465627}
+  - component: {fileID: 1924465626}
   m_Layer: 0
   m_Name: CometHeart
   m_TagString: Untagged
@@ -2698,6 +2744,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1924465626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924465623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fca921156f0bd4298244c506b214ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1513421253}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: ReplenishHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!58 &1924465627
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924465623}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &1951623315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2797,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1951623317}
   - component: {fileID: 1951623316}
+  - component: {fileID: 1951623319}
+  - component: {fileID: 1951623318}
   m_Layer: 0
   m_Name: CometGun
   m_TagString: Untagged
@@ -2782,3 +2873,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1951623318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951623315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fca921156f0bd4298244c506b214ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 761714458}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: DecreatAttackInterval
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!58 &1951623319
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951623315}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
