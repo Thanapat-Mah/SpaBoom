@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float attackRate = 1;
     public Projectile bulletPrefab;
-    public LevelController levelController;
+    public int score;
 
     void Start()
     {
@@ -16,9 +16,16 @@ public class Enemy : MonoBehaviour
     private void ShootBullet()
     {
         // shoot bullet only if level controller allow
-        if (levelController.AllowEneyShooting())
+        if (LevelController.Instance.AllowEnemyShooting())
         {
             Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+     {
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            ScoreManager.Instance.AddScore(score);
+        }
+     }
 }
