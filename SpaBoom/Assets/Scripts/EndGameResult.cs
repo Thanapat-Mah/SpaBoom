@@ -14,10 +14,10 @@ public class EndGameResult : MonoBehaviour
         score = ScoreManager.Instance.GetScore();
     }
 
-    public void OnClick_ChangeToLeaderboardScene()
+    public void OnClick_ChangeToLeaderboardScene(string sceneName)
     {
         LeaderBoardManager.Instance.AddScore(new PlayerScore(playerName.text, score));
         // LeaderBoardManager.Instance.CreateLeaderboard();
-        SceneManager.LoadScene("Leaderboard");
+        SceneManager.LoadScene(sceneName);
     }
 }
