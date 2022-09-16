@@ -6,13 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void OnClick_MoveToScene(string sceneName)
+    public void MoveToScene(int sceneID)
     {
-        SceneManager.LoadScene(sceneName);
-    }
-    
-    public void OnClick_StartGame()
-    {
-        ScoreManager.Instance.StartScore();
+        SceneManager.LoadScene(sceneID);
     }
 }
