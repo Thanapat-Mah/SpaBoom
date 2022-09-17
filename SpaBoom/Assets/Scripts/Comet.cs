@@ -9,11 +9,23 @@ public class Comet : MonoBehaviour
     public UnityEvent onDestroyed;
     public float speed;
 
-    private Vector3 target;
+    private Vector3 _target;
+    private Vector3 _posBefore;
+    private Vector3 _posAfter;
+    private float _distance;
 
     void Update()
     {
-        this.transform.position = Vector3.MoveTowards(this.transform.position, target, this.speed * Time.deltaTime);
+        _posBefore = transform.position;
+        transform.position = Vector3.MoveTowards(transform.position, _target, speed * Time.deltaTime);
+        _posAfter = transform.position;
+
+        // destroy comet after it reachs destination (position don't change)
+        _distance = Vector3.Distance(_posBefore, _posAfter);
+        if (_distance <= 0.000001)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,13 +33,12 @@ public class Comet : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             onDestroyed.Invoke();   // Invoke a delegate or a function subscript to this event.
-            Debug.Log("Comet destroyed");
             Destroy(gameObject);
         }
     }
 
     public void SetTarget(Vector3 newTarget)
     {
-        this.target = newTarget;
+        _target = newTarget;
     }
 }

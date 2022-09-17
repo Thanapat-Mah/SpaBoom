@@ -15,6 +15,8 @@ public class LevelController : MonoBehaviour
 
     private static bool _isGameRun;
     private static float _remainingTime;
+    private static float _defendingTime;
+    private static float _attackingTime;
     private static bool _isDefendPhase;
     private static int _wave;
 
@@ -28,12 +30,15 @@ public class LevelController : MonoBehaviour
         {
             Instance = this;
         }
+
+        _defendingTime = 5f;
+        _attackingTime = 15f;
     }
 
     private void Start()
     {
         _isGameRun = true;
-        _remainingTime = 5f;
+        _remainingTime = _defendingTime;
         _isDefendPhase = true;
         _wave = 1;
         SetObject();
@@ -112,14 +117,18 @@ public class LevelController : MonoBehaviour
         {
             _wave++;                        // increase wave if previous phase is attack phase
         }
+        else
+        {
+            CometSpawner.Instance.SpawnComets(_wave);   // spawn comet when change from defend to attack
+        }
         _isDefendPhase = !_isDefendPhase;   // switch phase
         if (_isDefendPhase)
         {
-            _remainingTime = 5f;           // 30 secs for defend phase
+            _remainingTime = _defendingTime;           // defend phase
         }
         else
         {
-            _remainingTime = 5f;           // 15 secs for attack phase
+            _remainingTime = _attackingTime;           // attack phase
         }
         SetObject();
         _isGameRun = true;

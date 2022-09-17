@@ -1145,7 +1145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &808026964
 Transform:
   m_ObjectHideFlags: 0
@@ -1414,7 +1414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &927863744
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,7 +1513,7 @@ GameObject:
   - component: {fileID: 982862395}
   - component: {fileID: 982862396}
   m_Layer: 0
-  m_Name: CometSpawnAreas
+  m_Name: CometSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1554,7 +1554,9 @@ MonoBehaviour:
   spawnAreaTopRight: {fileID: 927863743}
   spawnAreaBottomLeft: {fileID: 986572200}
   spawnAreaBottomRight: {fileID: 808026963}
-  prefab: {fileID: 2960355006039611555, guid: b343f0c173af497459ca64c950b8d6a2, type: 3}
+  cometHeartPrefab: {fileID: 2525168635181132317, guid: 55cf8df8ed257bd49bcd33d38e43a8a6, type: 3}
+  cometGunPrefab: {fileID: 7414512593458363603, guid: c46bc97fbdb05b341b76c6a35cd67bad, type: 3}
+  cometStarPrefab: {fileID: 2960355006039611555, guid: b343f0c173af497459ca64c950b8d6a2, type: 3}
 --- !u!1 &986572200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &986572201
 Transform:
   m_ObjectHideFlags: 0
@@ -1705,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1157426884
 Transform:
   m_ObjectHideFlags: 0

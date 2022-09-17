@@ -26,7 +26,7 @@ public class Gun : MonoBehaviour
         this.gameObject.SetActive(isActive);
     }
 
-    public void DecreatAttackInterval(float decreasePercent)
+    public void DecreaseAttackInterval(float decreasePercent)
     {
         attackInterval = attackInterval * (1.0f - decreasePercent);
         CancelInvoke();
