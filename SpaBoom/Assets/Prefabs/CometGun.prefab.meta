@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:SpaBoom/Assets/Prefabs/CometGun.prefab.meta
 guid: c46bc97fbdb05b341b76c6a35cd67bad
 PrefabImporter:
+========
+guid: 771312ef947ccac4bb7c21d76ac0ba0f
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> Feature/SoundEffect:SpaBoom/Assets/Audio.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

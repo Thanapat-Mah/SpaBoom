@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
         // shoot bullet only if level controller allow
         if (LevelController.Instance.AllowEnemyShooting())
         {
+            this.gameObject.GetComponent<AudioSource>().Play();
             Instantiate(this.bulletPrefab, transform.position, Quaternion.identity);
         }
     }
