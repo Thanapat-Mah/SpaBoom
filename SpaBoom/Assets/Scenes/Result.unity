@@ -1052,9 +1052,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1615387639}
-        m_TargetAssemblyTypeName: EndGameResult, Assembly-CSharp
-        m_MethodName: OnClick_ChangeToLeaderboardScene
+      - m_Target: {fileID: 11500000, guid: c353645da836def4f985d65df25feb45, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

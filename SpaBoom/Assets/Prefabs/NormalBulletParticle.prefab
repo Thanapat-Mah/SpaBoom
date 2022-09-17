@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3798851837643989089}
   - component: {fileID: 3798851837643989102}
   - component: {fileID: 3798851837643989103}
+  - component: {fileID: -4714170037444905584}
   m_Layer: 9
   m_Name: NormalBulletParticle
   m_TagString: Untagged

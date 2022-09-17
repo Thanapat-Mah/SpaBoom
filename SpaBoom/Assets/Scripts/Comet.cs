@@ -32,6 +32,7 @@ public class Comet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
+            this.gameObject.GetComponent<AudioSource>().Play();
             if(this.gameObject.CompareTag("CometStar")){
                 ScoreManager.Instance.AddScore(100);
             }
