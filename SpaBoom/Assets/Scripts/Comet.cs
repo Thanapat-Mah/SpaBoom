@@ -41,4 +41,9 @@ public class Comet : MonoBehaviour
     {
         _target = newTarget;
     }
+
+    public void SetActive()
+    {
+        this.gameObject.SetActive(true);
+    }
 }

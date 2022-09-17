@@ -69,6 +69,7 @@ public class CometSpawner : MonoBehaviour
         }
         Comet comet = Instantiate(cometPrefab, _spawnPoint, Quaternion.identity);
         comet.SetTarget(_destinationPoint);
+        comet.SetActive();
     }
 
     // spawn comet(s) according to wave of the game
@@ -76,7 +77,8 @@ public class CometSpawner : MonoBehaviour
     {
         if (wave == 1)
         {
-            SpawnComet(cometGunPrefab);
+            SpawnComet(cometHeartPrefab);
+            StartCoroutine(SpawnDelay(3, cometGunPrefab));
         }
         else if (wave == 2)
         {
@@ -85,7 +87,7 @@ public class CometSpawner : MonoBehaviour
         }
         else if (wave == 3)
         {
-            SpawnComet(cometHeartPrefab);
+            SpawnComet(cometStarPrefab);
             StartCoroutine(SpawnDelay(3, cometStarPrefab));
         }
     }
