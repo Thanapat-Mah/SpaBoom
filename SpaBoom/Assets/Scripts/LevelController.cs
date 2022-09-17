@@ -138,7 +138,7 @@ public class LevelController : MonoBehaviour
     {
         _isGameRun = false;
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Result");
         _isGameRun = true;
     }
 

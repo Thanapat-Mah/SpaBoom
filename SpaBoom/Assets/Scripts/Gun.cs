@@ -17,7 +17,6 @@ public class Gun : MonoBehaviour
     {
         if (LevelController.Instance.AllowPlayerShoot())
         {
-            this.gameObject.GetComponent<AudioSource>().Play();
             Instantiate(this.bulletPrefab, spawnPoint.transform.position, Quaternion.identity);
         }
     }
