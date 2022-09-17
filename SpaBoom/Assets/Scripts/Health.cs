@@ -47,4 +47,12 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Result");
     }
+
+    public void ReplenishHealth()
+    {
+        if (_remainingHealth < 3)
+        {
+            _remainingHealth++;
+        }
+    }
 }
