@@ -5,7 +5,6 @@ using UnityEngine;
 public class FlashSprite : MonoBehaviour
 {
     public Material flashMaterial;
-
     private SpriteRenderer _spriteRenderer;
     private Material _originalMaterial;
 
@@ -28,7 +27,7 @@ public class FlashSprite : MonoBehaviour
     {
         // Swap to the flashMaterial.
         _spriteRenderer.material = flashMaterial;
-
+        this.gameObject.GetComponent<AudioSource>().Play();
         // Pause the execution of this function for "duration" seconds.
         yield return new WaitForSeconds(0.1f);
 
