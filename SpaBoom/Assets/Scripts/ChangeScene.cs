@@ -12,4 +12,9 @@ public class ChangeScene : MonoBehaviour
     {
         ScoreManager.Instance.StartScore();
     }
+
+    public void OnClick_Exit()
+    {
+        Application.Quit();
+    }
 }
