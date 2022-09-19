@@ -1858,6 +1858,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 873227095489585037, guid: c46bc97fbdb05b341b76c6a35cd67bad, type: 3}
+      propertyPath: m_Pitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 873227095489585037, guid: c46bc97fbdb05b341b76c6a35cd67bad, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c29350a840b61c498f490d2748b722c, type: 3}
+    - target: {fileID: 873227095489585037, guid: c46bc97fbdb05b341b76c6a35cd67bad, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7414512593458363600, guid: c46bc97fbdb05b341b76c6a35cd67bad, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2191,40 +2203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 100
-  speed: 100
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 100
-      inSlope: 30
-      outSlope: 30
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 130
-      inSlope: 30
-      outSlope: 30
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 2
-      value: 160
-      inSlope: 30
-      outSlope: 30
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  speedIncreasePercent: 25
   changeTime: 2
   percentChange: 50
 --- !u!4 &1230057394
@@ -2478,7 +2457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede0c814be5011d41b296cb6ef9a0702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 1
+  startAtkRate: 1
+  atkRateIncreasePercent: 20
   bulletPrefab: {fileID: 5632545476586690161, guid: 6bd4021c9b7b88643b68c79e03cedd80, type: 3}
   score: 10
 --- !u!61 &1373991432
@@ -2631,10 +2611,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ddeef69307f2ba49b1eb3580d981952, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c29350a840b61c498f490d2748b722c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 3
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3588,7 +3568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede0c814be5011d41b296cb6ef9a0702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRate: 1
+  startAtkRate: 1
+  atkRateIncreasePercent: 0
   bulletPrefab: {fileID: 5632545476586690161, guid: 3cdedaf9674d48c43aeee42df4d22599, type: 3}
   score: 20
 --- !u!212 &1745239382
@@ -3955,10 +3936,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ddeef69307f2ba49b1eb3580d981952, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c29350a840b61c498f490d2748b722c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 3
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0

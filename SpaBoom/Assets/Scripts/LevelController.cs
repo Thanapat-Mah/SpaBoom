@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour
             Instance = this;
         }
 
-        _defendingTime = 5f;
+        _defendingTime = 15f;
         _attackingTime = 15f;
     }
 

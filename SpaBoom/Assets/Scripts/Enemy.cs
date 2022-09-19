@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(ShootBullet), this.attackRate, this.attackRate);
+        InvokeRepeating(nameof(ShootBullet), (this.attackRate + 0.4f), this.attackRate);
     }
 
     private void Update()
