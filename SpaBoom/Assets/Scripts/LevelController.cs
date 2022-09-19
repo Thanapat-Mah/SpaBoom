@@ -160,4 +160,9 @@ public class LevelController : MonoBehaviour
             gun.SetActive(true);
         }
     }
+
+    public int GetWave()
+    {
+        return _wave;
+    }
 }
